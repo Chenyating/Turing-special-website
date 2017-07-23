@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+<style type="text/css">
+   body{
+	   margin:0px; padding:0px}
+   #bg{
+	   width:1348px; height:100%; background:url(materail/index/background.jpg);}
+   #title{
+	   width:1000px; height:500px; margin:0px auto;}
+   #foot{
+	   background:url(materail/login/foot.png) no-repeat; width:100%; height:100px; margin-bottom:0px;}
+   #location{
+	   margin-left:187px;margin-top:60px;}   
+   #bj{
+       background:url(materail/login/jieshao.png); height:502px; width:901px; margin-left:235px; margin-top:30px;}
+   #martop{
+	    margin-left:375px; padding-top:10px}
+   #apDiv1 {
+	position: absolute; width: 517px; height: 322px; z-index: 1; left: 453px; top: 753px;}
+	.style{
+		line-height:20px; border:thin; height:24px; width:190px;}
+   #adver{
+          position:absolute; left:4px; top:9px; z-index:6; width:84px; height:145px;}
+.num{ float:right;position:absolute; right:0px;top: 30px; height:30px;}
+.num a{float:left;display:block; overflow:hidden;padding:5px 20px 5px 20px;}
+.num {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 130px;
+    position: relative;
+    float: left;}
+.num a[id^=num]:hover{
+    background-color:#CCCCCC;
+    padding-left:35px;
+    width:130px;}
+.num a[id^=num] {
+	background-color:#CCCCCC;
+    border-right: solid 3px rgb(0,0,0);
+    border-left: solid 3px rgb(0,0,0);
+    transition-duration: 0.25s;
+    font-size: 19px;
+    border-radius: 0;
+    padding: 5px 0px 5px 15px;
+    width: 150px;
+    border-top: solid 3px rgb(0,0,0);}
+#num_video{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+	background:url(materail/tubiao.jpg);
+	color:#FFFFFF}
+ a:link{text-decoration:none; list-style:none;}
+	a:hover{text-decoration:none}
+</style> 
+
+<script type="text/jscript">
+     var advertop;
+	var adverleft;
+	var adverobject;
+	function inix()
+	{
+	   adverobject=document.getElementById("adver");
+	   if(adverobject.currentStyle)  /*判断是否是IE浏览器*/
+	   {
+	      advertop=parseInt(adverobject.currentStyle.top);
+		  adverleft=parseInt(adverobject.currentStyle.left);
+	   
+	   }
+       else  /* 不是IE则是火狐*/
+	   {
+	      advertop=parseInt(document.defaultView.getComputeStyle(adverobject,null).top);
+		  adverleft=parseInt(document.defaultView.getComputeStyle(adverobject,null).left);
+		  
+	   }	
+	 }
+	 function move()  /*移动图片，把以前的初始位置坐标换一下*/
+	    {
+         adverobject.style.top=advertop+parseInt(document.documentElement.scrollTop)+"px";
+         adverobject.style.left=adverleft+parseInt(document.documentElement.scrollLeft)+"px";
+        }  
+    window.onload=inix;
+    window.onscroll=move;
+	function lu()
+	{
+	 var ID11=document.getElementById("ID1").value;
+	var yongrest=/[a-zA-Z0-9]{4,16}/;
+	var mim=document.getElementById("pwd").value;
+	var mirest=/[a-zA-Z0-9]{4,10}/;
+	   if(yongrest.test(ID11)==true&&mirest.test(mim)==true)
+	   {
+		 alert("Login Success"); 
+		 document.getElementById("ID1").value="";
+		 document.getElementById("pwd").value="";
+		 window.location.href="goshopping.html";
+		 return true;
+		}
+		 else
+		 {alert("Please login again");
+		 return false;}
+	 }
+</script>
+
+</head>
+<body>
+ <div id="adver" class="num">
+      <a href="index.html" id="num_video" target="_blank"><span style="font:30px">HOME PAGE</span></a>
+       <a href="proflie.html" id="num_video" target="_blank"><span style="font:30px">PROFLIE</span></a> 
+      
+       <a href="turingshop.html" id="num_video" target="_blank"><span style="font:30px">TURING SHOP</span></a>
+       <a href="#" id="num_video" ><span style="font:30px">LOGIN</span></a>
+ </div>	
+<div id="apDiv1" align="center">
+  <table width="517" height="320" border="0">
+    <tr>
+      <td width="300"><span style="font-size:24px; font-family:Georgia, 'Times New Roman', Times, serif; color:#FFF">Perfect pass:</span></td>
+      <td width="207"><input type="text" class="style" id="ID1" /></td>
+    </tr>
+    <tr>
+      <td><span style="font-size:24px; font-family:Georgia, 'Times New Roman', Times, serif; color:#FFF">Login password:</span></td>
+      <td><input type="password"  class="style"  id="pwd"/></td>
+    </tr>
+    <tr>
+      <td><input type="image" src="materail/login/Immediately login.png" width="300" height="75"  onclick="lu()" style="outline:none"/></td>
+      <td><a href="register.html" target="_blank"><img src="materail/login/立即注册.png" width="200" height="75" style="border:0"/></a></td>
+    </tr>
+  </table>
+</div>
+<div id="bg">
+  <div id="title"><img src="materail/login/denglu.png" width="1015px"; height="500px"; border="0px"/></div>
+  <div id="location"><img src="materail/login/login.png" /></div>
+  <div id="bj">
+    <div id="martop"><span style="font-family:Verdana, Geneva, sans-serif; font-size:36px; color:#FFF">LOGIN</span></div>
+  </div>
+  <div id="foot">
+	   <div align="center" >
+           <p><img src="materail/login/logo.png"/></p>
+       </div>
+     </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Register</title>
+<style type="text/css">
+   body{
+	   margin:0px; padding:0px}
+   #bg{
+	   width:1348px; height:100%; background:url(materail/index/background.jpg);}
+   #title{
+	   width:1000px; height:500px; margin:0px auto;}
+   #foot{
+	   background:url(materail/login/foot.png) no-repeat; width:100%; height:100px; margin-bottom:0px;}
+   #location{
+	   margin-left:187px;margin-top:60px;}   
+   #bj{
+       background:url(materail/login/jieshao.png); height:502px; width:901px; margin-left:235px; margin-top:30px;}
+   #martop{
+	    margin-left:375px; padding-top:10px}
+   #apDiv1 {
+	position: absolute;
+	width: 812px;
+	height: 364px;
+	z-index: 1;
+	left: 308px;
+	top: 732px;
+}
+	.style{
+		line-height:20px; border:thin; height:24px; width:190px;}
+   #adver{
+          position:absolute; left:4px; top:9px; z-index:6; width:84px; height:145px;}
+.num{ float:right;position:absolute; right:0px;top: 30px; height:30px;}
+.num a{float:left;display:block; overflow:hidden;padding:5px 20px 5px 20px;}
+.num {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 130px;
+    position: relative;
+    float: left;}
+.num a[id^=num]:hover{
+    background-color:#CCCCCC;
+    padding-left:35px;
+    width:130px;}
+.num a[id^=num] {
+	background-color:#CCCCCC;
+    border-right: solid 3px rgb(0,0,0);
+    border-left: solid 3px rgb(0,0,0);
+    transition-duration: 0.25s;
+    font-size: 19px;
+    border-radius: 0;
+    padding: 5px 0px 5px 15px;
+    width: 150px;
+    border-top: solid 3px rgb(0,0,0);}
+#num_video{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+	background:url(materail/tubiao.jpg);
+	color:#FFFFFF}
+ a:link{text-decoration:none}
+	a:hover{text-decoration:none}
+	.width{width:207px; height:20px;}
+.zc{
+	background:url(materail/login/%E7%AB%8B%E5%8D%B3%E6%B3%A8%E5%86%8C.png)}
+</style> 
+
+<script type="text/jscript">
+     var advertop;
+	var adverleft;
+	var adverobject;
+	function inix()
+	{
+	   adverobject=document.getElementById("adver");
+	   if(adverobject.currentStyle)  /*判断是否是IE浏览器*/
+	   {
+	      advertop=parseInt(adverobject.currentStyle.top);
+		  adverleft=parseInt(adverobject.currentStyle.left);
+	   
+	   }
+       else  /* 不是IE则是火狐*/
+	   {
+	      advertop=parseInt(document.defaultView.getComputeStyle(adverobject,null).top);
+		  adverleft=parseInt(document.defaultView.getComputeStyle(adverobject,null).left);
+		  
+	   }	
+	 }
+	 function move()  /*移动图片，把以前的初始位置坐标换一下*/
+	    {
+         adverobject.style.top=advertop+parseInt(document.documentElement.scrollTop)+"px";
+         adverobject.style.left=adverleft+parseInt(document.documentElement.scrollLeft)+"px";
+        }  
+    window.onload=inix;
+    window.onscroll=move;
+	function ID1()
+	{
+	 var ID11=document.getElementById("ID1").value;
+	 var ID22Id=document.getElementById("ID2");
+	 var yongrest=/[a-zA-Z0-9]{4,16}/;
+	 if(yongrest.test(ID11)==false)
+	{ ID22Id.innerHTML="（<span style='font-size:14px; color:red'>Enter ID in an incorrect format</span>）"
+	  return false;
+    }
+	}
+	function ID2()
+	{ 
+	 
+	 var ID22Id=document.getElementById("ID2");
+	 ID22Id.innerHTML="<span style='font-size:14px; color:#FFF'>（Composed of letters and Numbers,and4-16characters）</span>";
+	 return false;}
+	 
+	    
+  function pwd1()
+  {
+    var mim=document.getElementById("pwd").value;
+	var miId=document.getElementById("pwd_prompt");
+	var mirest=/[a-zA-Z0-9]{4,10}/;
+	if(mirest.test(mim)==false)
+	{ 
+	   miId.innerHTML="（<span style='font-size:14px; color:red'>Enter Password in an incorrect format</span>）";
+	   return false;
+    }
+   }
+   
+    function pwd2()
+  {
+	  
+	var miId=document.getElementById("pwd_prompt");
+	   miId.innerHTML="<span style='font-size:14px; color:#FFF'>（Composed of letters and Numbers,and4-10characters）</span>";
+	   return false;
+   
+   }
+   
+    function agpwd1()
+	{
+	      var mim=document.getElementById("pwd").value;
+		  var zaic=document.getElementById("repwd").value;
+		  var zaiciId=document.getElementById("repwd_prompt");
+		  if(zaic!=mim)
+		  { zaiciId.innerHTML="（<span style='font-size:14px; color:red'>There is something wrong, Please enter number again.</span>）";
+	      return false;}
+	}
+	
+     function agpwd2()
+	{
+	      
+		  var zaiciId=document.getElementById("repwd_prompt");
+		   zaiciId.innerHTML="<span style='font-size:14px; color:#FFF'>（Please enter the same password again）</span>";
+	      return false;
+	}
+   
+    function mail1()
+  {
+	var youx=document.getElementById("email").value;
+	var youxId=document.getElementById("email_prompt");
+	var regCode= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if(regCode.test(youx)==false)
+	{ youxId.innerHTML="（<span style='font-size:14px; color:red'>Enter Mail in an incorrect format</span>）";
+	  return false;
+    }
+   }
+   
+   function mail2()
+   {
+    
+	 var youxId=document.getElementById("email_prompt"); 
+	     youxId.innerHTML="";
+	     return false;  
+    }
+	
+	function register()
+	{
+		
+    var ID11=document.getElementById("ID1").value;
+	var ID22Id=document.getElementById("ID2");
+	var yongrest=/[a-zA-Z0-9]{4,16}/;
+	var mim=document.getElementById("pwd").value;
+	var miId=document.getElementById("pwd_prompt");
+	var mirest=/[a-zA-Z0-9]{4,10}/;
+	var mim=document.getElementById("pwd").value;
+    var zaic=document.getElementById("repwd").value;
+	var zaiciId=document.getElementById("repwd_prompt");
+    var youx=document.getElementById("email").value;
+	var youxId=document.getElementById("email_prompt");
+	var regCode= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	 if(yongrest.test(ID11)==true&&mirest.test(mim)==true&&zaic==mim&&regCode.test(youx)==true)
+	        {alert("Registration Successful");
+			document.getElementById("ID1").value="";
+			document.getElementById("pwd").value="";
+			document.getElementById("repwd").value="";
+			document.getElementById("email").value="";
+window.location.href="login.html"
+	         return true;}
+     else{
+		 alert("Please register again");
+		 return false;}     
+		
+		}
+</script>
+
+</head>
+<body>
+<div id="adver" class="num">
+        <a href="index.html" id="num_video" target="_blank"><span style="font:30px">HOME PAGE</span></a>
+       <a href="proflie.html" id="num_video" target="_blank"><span style="font:30px">PROFLIE</span></a> 
+      
+       <a href="turingshop.html" id="num_video" target="_blank"><span style="font:30px">TURING SHOP</span></a>
+       <a href="login.html" id="num_video" target="_blank"><span style="font:30px">LOGIN</span></a>
+ </div>	
+<div id="apDiv1" align="center">
+  <table width="797" height="359" border="0">
+    <tr>
+      <td width="165"><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Identification:</span></td>
+      <td width="234"><input type="text" class="width" id="ID1" onblur="ID1()" onfocus="ID2()"/></td>
+      <td width="384"><div id="ID2"><span style="font-size:14px; color:#FFF">（Composed of letters and Numbers,and4-16characters）</span></div></td>
+    </tr>
+    <tr>
+      <td><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Password:</span></td>
+      <td><input type="password" class="width" id="pwd" onblur="pwd1()" onfocus="pwd2()"/></td>
+      <td><span style="font-size:14px; color:#FFF"/><div id="pwd_prompt">（Composed of letters and Numbers,and4-10characters）</div></td>
+    </tr>
+    <tr>
+      <td><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Password Again:</span></td>
+      <td><input type="password" class="width" id="repwd" onblur="agpwd1()" onfocus="agpwd2()" /></td>
+      <td><div id="repwd_prompt"><span style="font-size:14px; color:#FFF">（Please enter the same password again）</span></div></td>
+    </tr>
+    <tr>
+      <td><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Mailbox:</span></td>
+      <td><input type="text" class="width" onblur="mail1()" onfocus="mail2()" id="email" /></td>
+      <td><div id="email_prompt"><span style="font-size:14px; color:#FFF"></span></div></td>
+    </tr>
+    <tr>
+      <td><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Sex:</span></td>
+      <td><input name="gen" type="radio" value="男" checked="checked"><img src="materail/login/男.gif" width="22" height="21" />           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="gen" type="radio" value="女" ><img src="materail/login/女.gif" width="23" height="21" />
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span style="font-family:'Courier New', Courier, monospace;font-size:18px;color:#FFF">Hobby:</span></td>
+      <td colspan="2"><input type="checkbox" name="hobby1" value="sports" checked="checked" /><span style="color:#FFF; font-family:'Times New Roman', Times, serif">Sport</span>&nbsp;&nbsp;
+          <input type="checkbox" name="hobby2" value="talk" /><span style="color:#FFF; font-family:'Times New Roman', Times, serif">Chat</span>&nbsp;&nbsp;
+          <input type="checkbox" name="hobby3" value="play" /><span style="color:#FFF; font-family:'Times New Roman', Times, serif">Play Games</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center"><a href="login.html" target="_blank"><img src="materail/login/Immediately login.png" width="300" height="75" /></a> 
+                       <input type="image" src="materail/login/立即注册.png" width="200" height="75" onclick="register()" /></td>
+    </tr>
+  </table>
+</div>
+<div id="bg">
+  <div id="title"><img src="materail/login/zhuce.png" width="1015px"; height="500px"; border="0px" /></div>
+  <div id="location"><img src="materail/login/login.png" /></div>
+  <div id="bj">
+    <div id="martop"><span style="font-family:Verdana, Geneva, sans-serif; font-size:36px; color:#FFF">REGISTER</span></div>
+  </div>
+  <div id="foot">
+	   <div align="center" >
+           <p><img src="materail/login/logo.png"/></p>
+       </div>
+  </div>
+</div>
+</body>
+</html>

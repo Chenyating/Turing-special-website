@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>GoShopping</title>
+<style type="text/css">
+#adver{
+	position:absolute; left:0px; top:150px; z-index:2}
+li{
+	list-style:none}	
+
+ 
+	body {
+         background-image: url(materail/shop/background.jpg);
+	     background-repeat: no-repeat;
+         background-attachment:fixed;
+		 width:1340px;
+		 height:729px;
+		 margin:0px;
+         }
+   #bg{
+	   width:1340px; height:729px;
+	   }  
+  
+   .foot{ margin-top:150px; margin-left:0px;}
+	#top{
+		margin-top:0px;}
+	.loction{
+		margin-left:230px; margin-top:150px; height:800px; background:url(materail/shop/cart.png) no-repeat; padding-top:40px; padding-left:10px; }
+</style>
+<script type="text/jscript">
+   function xuan()
+   {
+      box=document.getElementsByName("xuan");
+	  for(i=0;i<box.length;i++)
+	  {
+	    if(document.getElementsByName("quan")[0].checked==true)
+		   box[i].checked=true;
+		   else
+		   box[i].checked=false;
+	  }
+	  if(document.getElementById("choice_two").checked&&document.getElementById("choice_one").checked)
+	  {
+	  document.getElementById("area_one").value = 'HTML面向对象基础与设计'+'\n'+'图灵的秘密'+'\n'+'C语言程序设计'+'\n'+'Swift基础教程'+'\n'
+		document.getElementById("frist").value = 4
+	  }
+	  else
+	  {document.getElementById("area_one").value ="";
+	  document.getElementById("frist").value = 0}
+   }
+   function fuck()
+          {
+			  var A = document.getElementById("num_1");
+			  var B = document.getElementById("num_2");
+			  var C = document.getElementById("num_3");
+			  var D = document.getElementById("num_4");
+			  var a = parseInt(A.options[A.selectedIndex].value);
+			  var b = parseInt(B.options[B.selectedIndex].value);
+			  var c = parseInt(C.options[C.selectedIndex].value);
+			  var d = parseInt(D.options[D.selectedIndex].value);
+			  var main = a*66+b*38+c*49+d*66;
+			  if(confirm('You need to pay '+ main +' RMB'))
+                             {alert('付款成功')}
+		  }
+       var advertop;              <!--此为悬浮窗JS开头-->
+	 var adverleft;
+	 var adverobject;
+	 function inix()
+	 {
+		adverobject = document.getElementById("adver");
+		if(adverobject.currentStyle)
+		{
+			advertop = parseInt(adverobject.currentStyle.top);
+		    adverleft = parseInt(adverobject.currentStyle.left)
+		} 
+		else
+		{
+			advertop = parseInt(document.defaultView.getComputedStyle(adverobject,null).top);
+			adverleft = parseInt(document.defaultView.getComputedStyle(adverobject,null).left);
+		}
+	 }
+	 function move()
+	 {
+		adverobject.style.top = advertop+parseInt(document.documentElement.scrollTop)+"px";
+		adverobject.style.left = adverleft+parseInt(document.documentElement.scrollLeft)+"px"; 
+	 }
+	 
+	 window.onload = inix;
+	 window.onscroll = move;                <!--此为悬浮窗JS结尾-->
+	 function Esc()         
+	 {
+		 document.getElementById("adver").style.display='none';
+	 }
+	 function change_main()                  <!--物品数量函数-->
+  {
+	  var i=0;
+	  document.getElementById("area_one").value='';
+	  if(document.getElementById("choice_one").checked)   
+	     {
+			 i++;
+			 document.getElementById("area_one").value='HTML面向对象基础与设计'+'\n'
+		 }
+	  if(document.getElementById("choice_two").checked)   
+	     {
+		    i++;
+			document.getElementById("area_one").value = document.getElementById("area_one").value + '图灵的秘密'+'\n'}
+	  if(document.getElementById("choice_three").checked)   
+	     {
+		  i++;
+		  document.getElementById("area_one").value = document.getElementById("area_one").value + 'C语言程序设计'+'\n'}
+	  if(document.getElementById("choice_four").checked)   
+	  {
+		  i++;
+	      document.getElementById("area_one").value = document.getElementById("area_one").value + 'Swift基础教程'+'\n'}
+      
+	  document.getElementById("frist").value = i;
+  }
+</script>
+
+
+<body>
+               <div id="adver">               <!--此为悬浮窗开头div-->
+                      <div>
+                           <ul>
+                               <li><font style="color:#66FFCC">您已选择了<input type="text" id="frist" value="0" style="width:10px; border:0px; font:黑体 14px; color:#FF0000">种商品<br>它们是</li>
+                               <li><textarea style="width:165px; height:80px; border:0px; filter:alpha(opacity=20); background:#000; color:#FFF"  value="" id="area_one" ></textarea></li>
+                           </ul>
+                      </div>
+                    
+      </div>                         <!--此为悬浮窗结尾div-->
+
+<div id="bg">  
+     <div id="top"><img src="materail/shop/head.png" width="1360" height="160" /></div>
+     <div class="loction">
+     <table border="0">
+ <tr>
+    <td colspan="4">&nbsp;</td>  
+    <td width="227"><a href="login.html" target="_blank"><input type="button" value="Login" /></a><a href="register.html" target="_blank"><input type="button" value="Registered" /></a></td>
+  </tr>
+
+  <tr>
+    <td colspan="3"><span style="color:#FFF">Check All</span></td>
+    <td colspan="2"><span style="color:#FFF">Distribution to provinces:</span> &nbsp;&nbsp;
+      <select name="city">
+     <option value="" selected="selected">[please choose provinces]</option>
+     <option value="0">HeiLongJiang</option>
+     <option value="1">JiLin</option>
+     <option value="2">LiaoNing</option>
+     <option value="3">BeiJing</option>
+     <option value="4">TianJin</option>
+     <option value="5">HeBei</option>
+     <option value="6">HeNan</option>
+     <option value="7">HuNan</option>
+     <option value="8">HuBei</option>
+     <option value="9">JiangXi</option>
+     <option value="10">Shanxi</option>
+     <option value="11">AnHui</option>
+     <option value="12">ShanDong</option>
+     <option value="13">NingXia</option>
+     <option value="14">GuangDong</option>
+     <option value="15">GuangXi</option>
+     <option value="16">XiZang</option>
+     <option value="17">QingHai</option>
+     <option value="18">NeiMengGu</option>
+     <option value="19">ShanXi</option>
+     <option value="20">XinJiang</option>
+     <option value="22">FuJian</option>
+     <option value="23">Hongkong</option>
+     <option value="24">Macao</option>
+     <option value="25">TaiWan</option>
+     <option value="26">Chongqing</option>
+     <option value="27">SiChuan</option>
+     <option value="28">YunNan</option>
+     <option value="29">Shanxi</option>
+     <option value="30">GanSu</option>
+     <option value="31">ZheJiang</option>
+     <option value="32">HaiNan</option>
+     <option value="33">ShangHai</option>
+</select></td>
+  </tr>
+  <tr>
+    <td width="72"><input name="quan" type="checkbox" onchange="xuan()"/></td>
+    <td width="170">&nbsp;<span style="color:#FFF">Commodity</span></td>
+    <td width="105"><span style="color:#FFF">Unit Price</span></td>
+    <td width="218"><center><span style="color:#FFF">Number</span></center></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input name="xuan" type="checkbox" id="choice_one" onchange="change_main()"></td><td><img src="materail/shop/1.png"/></td>
+    <td>&nbsp;&nbsp;&nbsp;<span style="color:#FFF">66￥</span></td>
+    <td><select name="number1" id="num_1">
+     <option value="0" selected="selected" >[please choose the quantity you need.]</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input name="xuan" type="checkbox" id="choice_two" onchange="change_main()"></td><td><img src="materail/shop/2.png"/></td>
+    <td>&nbsp;&nbsp;&nbsp;<span style="color:#FFF">38￥</span></td>
+    <td><select name="number2" id="num_2">
+     <option value="0" selected="selected" >[please choose the quantity you need.]</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input name="xuan" type="checkbox"  id="choice_three" onchange="change_main()"></td><td><img src="materail/shop/3.png"/></td>
+    <td>&nbsp;&nbsp;&nbsp;<span style="color:#FFF">49￥</span></td>
+    <td><select name="number3" id="num_3">
+     <option value="0" selected="selected" >[please choose the quantity you need.]</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input name="xuan" type="checkbox" id="choice_four" onchange="change_main()"></td><td><img src="materail/shop/4.png"/></td>
+    <td>&nbsp;&nbsp;&nbsp;<span style="color:#FFF">66￥</span></td>
+    <td><select name="number4" id="num_4">
+     <option value="0" selected="selected" >[please choose the quantity you need.]</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option></td>
+    <td>&nbsp;</td>
+  </tr>
+ <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><input type="button" value="Submit bill" onclick="fuck()"/></td>
+  </tr></table>
+     </div>
+     <div class="foot"><img src="materail/shop/foot.png" width="1348" height="102" /></div>
+</div>

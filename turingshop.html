@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>TuRingShop</title>
+<style type="text/css">
+ 
+	body {
+         background-image: url(materail/shop/background.jpg);
+	     background-repeat: no-repeat;
+         background-attachment:fixed;
+		 width:1340px;
+		 height:729px;
+		 margin:0px;
+         }
+   #bg{
+	   width:1340px; height:729px;
+	   }  
+   #title{
+	   width:1000px; height:500px; margin:0px auto;
+	   }
+   #margintop{
+        margin-top:100px;width:1300;
+		}
+   #marginleft{
+        margin-top:100px;margin-left:196px;
+		background:url(materail/shop/buy.png) no-repeat;
+		width:956px;height:397px
+		}
+    #adver{
+          position:absolute; 
+          left:4px;
+          top:9px;
+          z-index:4;
+          width:84px;
+          height:145px;}
+    a:link{text-decoration:none}
+	a:hover{text-decoration:none}
+    #Layer1 {
+	    position:absolute;
+	    width:393px;
+	    height:79px;
+	    z-index:1;
+	    left: 708px;
+	    top: 1059px;
+	    }
+    #Layer2 {
+	    position:absolute;
+	    width:393px;
+	    height:79px;
+	    z-index:1;
+	    left: 709px;
+	    top: 1554px;
+        }
+     #Layer3 {
+	    position:absolute;
+	    width:393px;
+	    height:79px;
+	    z-index:1;
+	    left: 708px;
+	    top: 2056px;
+        }
+      #Layer4 {
+	    position:absolute;
+	    width:393px;
+	    height:79px;
+	    z-index:1;
+	    left: 708px;
+	    top: 2552px;
+        }
+
+#Layer5 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 353px;
+	top: 851px;
+}
+#Layer6 {
+	position:absolute;
+	width:267px;
+	height:195px;
+	z-index:3;
+	left: 767px;
+	top: 850px;
+}
+ .name{
+      font-size:24px;font-family:Arial, Helvetica, sans-serif;color:#CCCCCC}
+#Layer7 {
+	position:absolute;
+	width:222px;
+	height:115px;
+	z-index:4;
+	left: 354px;
+	top: 1355px;
+}
+#Layer8 {
+	position:absolute;
+	width:272px;
+	height:115px;
+	z-index:5;
+	left: 766px;
+	top: 1354px;
+}
+#Layer9 {
+	position:absolute;
+	width:213px;
+	height:115px;
+	z-index:6;
+	left: 355px;
+	top: 1845px;
+}
+#Layer10 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:7;
+	left: 764px;
+	top: 1850px;
+}
+#Layer11 {
+	position:absolute;
+	width:209px;
+	height:115px;
+	z-index:8;
+	left: -407px;
+	top: 482px;
+}
+#Layer12 {
+	position:absolute;
+	width:394px;
+	height:195px;
+	z-index:8;
+	left: 705px;
+	top: 2344px;
+}
+.num{ float:right;position:absolute; right:0px;top: 30px; height:30px;}
+.num a{float:left;display:block; overflow:hidden;padding:5px 20px 5px 20px;}
+.num {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 130px;
+    position: relative;
+    float: left;}
+.num a[id^=num]:hover{
+    background-color:#CCCCCC;
+    padding-left:35px;
+    width:130px;}
+.num a[id^=num] {
+	background-color:#CCCCCC;
+    border-right: solid 3px rgb(0,0,0);
+    border-left: solid 3px rgb(0,0,0);
+    transition-duration: 0.25s;
+    font-size: 19px;
+    border-radius: 0;
+    padding: 5px 0px 5px 15px;
+    width: 150px;
+    border-top: solid 3px rgb(0,0,0);}
+#num_video{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+	background:url(materail/tubiao.jpg);
+	color:#FFFFFF}
+</style>
+<script type="text/jscript">
+     var advertop;
+	var adverleft;
+	var adverobject;
+	function inix()
+	{
+	   adverobject=document.getElementById("adver");
+	   if(adverobject.currentStyle)  /*判断是否是IE浏览器*/
+	   {
+	      advertop=parseInt(adverobject.currentStyle.top);
+		  adverleft=parseInt(adverobject.currentStyle.left);
+	   
+	   }
+       else  /* 不是IE则是火狐*/
+	   {
+	      advertop=parseInt(document.defaultView.getComputeStyle(adverobject,null).top);
+		  adverleft=parseInt(document.defaultView.getComputeStyle(adverobject,null).left);
+		  
+	   }	
+	 }
+	 function move()  /*移动图片，把以前的初始位置坐标换一下*/
+	    {
+         adverobject.style.top=advertop+parseInt(document.documentElement.scrollTop)+"px";
+         adverobject.style.left=adverleft+parseInt(document.documentElement.scrollLeft)+"px";
+        }  
+    window.onload=inix;
+    window.onscroll=move;
+</script>
+</head>
+<body>
+
+<div id="bg">
+     <div id="title"><img src="materail/shop/shop.png" width="1015px"; height="500px"; border="0px" /></div>
+	 <div id="margintop" align="center"><img src="materail/shop/tuijian1.png" /></div>
+  <div id="marginleft">
+	    <div id="Layer1"><a href="goshopping.html" target="_blank"><img src="materail/shop/Buy1.png" width="390" height="80" /></a></div>
+	    <div id="Layer5"><img src="materail/shop/Swift.png" width="223" height="277" /></div>
+		 <div id="adver" class="num">
+           <a href="index.html" id="num_video" target="_blank"><span style="font:30px">HOME PAGE</span></a>
+       <a href="proflie.html" id="num_video" target="_blank"><span style="font:30px">PROFLIE</span></a> 
+      
+       <a href="#" id="num_video" ><span style="font:30px">TURING SHOP</span></a>
+       <a href="login.html" id="num_video" target="_blank"><span style="font:30px">LOGIN</span></a>
+       </div>	
+	    <div id="Layer6">
+	      <table width="266" height="193" border="0">
+            <tr>
+              <td width="99" height="57" class="name" > Name：</td>
+              <td width="157" class="name">Swift基础教程</td>
+            </tr>
+            <tr>
+              <td  class="name" > Pages：</td>
+              <td  class="name">232</td>
+            </tr>
+            <tr>
+              <td  class="name" >Price：</td>
+              <td  class="name">￥49</td>
+            </tr>
+          </table>
+	    </div>
+  </div> 
+	   <div id="marginleft">
+       <div id="Layer2"><a href="goshopping.html" target="_blank"><img src="materail/shop/Buy1.png" width="390" height="80" /></a></div>   	   
+	   <div id="layer"></div>
+	   <div id="Layer8">
+	     <table width="277" height="193" border="0">
+           <tr>
+             <td width="99" height="57" class="name" > Name：</td>
+             <td width="168" class="name">C语言程序设计</td>
+           </tr>
+           <tr>
+             <td  class="name" > Pages：</td>
+             <td  class="name">298</td>
+           </tr>
+           <tr>
+             <td  class="name" >Price：</td>
+             <td  class="name">￥38</td>
+           </tr>
+         </table>
+	   </div>
+	   </div>
+  <div id="marginleft">
+    <div id="Layer9"><img src="materail/shop/图灵秘密.png" width="212" height="285" /></div>
+	   <div id="Layer3"><a href="goshopping.html" target="_blank"><img src="materail/shop/Buy1.png" width="390" height="80" /></a></div>  
+	   <div id="Layer7"><img src="materail/shop/C程序.png" width="223" height="279" /></div>
+	   <div id="Layer10">
+	     <table width="277" height="193" border="0">
+           <tr>
+             <td width="99" height="57" class="name" > Name：</td>
+             <td width="168" class="name">图灵的秘密</td>
+           </tr>
+           <tr>
+             <td  class="name" > Pages：</td>
+             <td  class="name">596</td>
+           </tr>
+           <tr>
+             <td  class="name" >Price：</td>
+             <td  class="name">￥53
+             <div id="Layer11"><img src="materail/shop/UML面向对象.png" width="208" height="296" /></div></td>
+           </tr>
+         </table>
+	   </div>
+  </div>
+	   <div id="marginleft">
+	   <div id="Layer4"><a href="goshopping.html" target="_blank"><img src="materail/shop/Buy1.png" width="390" height="80" /></a></div>  
+	   <div id="Layer12">
+	     <table width="391" height="193" border="0">
+           <tr>
+             <td width="103" height="57" class="name" > Name：</td>
+             <td width="278" class="name">UML面向对象建模与设计</td>
+           </tr>
+           <tr>
+             <td  class="name" > Pages：</td>
+             <td  class="name">432</td>
+           </tr>
+           <tr>
+             <td  class="name" >Price：</td>
+             <td  class="name">￥66</td>
+           </tr>
+         </table>
+	   </div>
+	   </div>
+	  <div><img src="materail/shop/foot.png" /></div>
+</div>
+
+</body>
+</html>
