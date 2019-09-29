@@ -1,7 +1,7 @@
 # Turing-special-website
 图灵专题网站 大二的作品
 纪念图灵
-本网站由：赵帅飞、田佳琦、周龙泉、陈雅婷 共同开发
+本站由：赵帅飞、田佳琦、周龙泉、陈雅婷 共同开发
 
 **这是地址：**
 https://htmlpreview.github.io/?https://github.com/Chenyating/Turing-special-website/blob/master/index.html
